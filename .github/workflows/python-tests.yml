@@ -1,5 +1,4 @@
-name: Python Tests
-
+name: On push checks
 on:
   push:
     branches: [ main ]
