@@ -7,7 +7,7 @@ readme = "README.md"
 repository = "https://github.com/meherbhaskar/research-help-agent"
 license = "MIT"
 packages = [{include = "research_help_agent"}]
-package-mode = false
+package-mode = true
 
 
 [tool.poetry.dependencies]
@@ -50,4 +50,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-research-help = "research_help_agent.main:main"
+research-help = "research_help_agent.arxiv_search:main"
