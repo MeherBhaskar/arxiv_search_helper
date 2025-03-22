@@ -500,8 +500,8 @@ def research_assistant(query):
             print(f"- {paper['title']} ({paper['url']})")
 
 
-# Example usage
-if __name__ == "__main__":
+def main():
+    """Run the ArXiv Research Assistant as a command-line tool."""
     print("ArXiv Research Assistant")
     print("------------------------")
     print("This tool searches arXiv for papers on your topic and provides summaries.")
@@ -513,3 +513,7 @@ if __name__ == "__main__":
         if user_query.lower() == "exit":
             break
         research_assistant(user_query)
+
+
+if __name__ == "__main__":
+    main()
