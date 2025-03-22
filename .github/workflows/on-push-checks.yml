@@ -17,3 +17,6 @@ jobs:
         run: poetry install
       - name: Run black
         run: poetry run black --check .
+      - name: Update README with build status badge
+        run: |
+          echo "[![Build Status](https://github.com/MeherBhaskar/arxiv-search/workflows/Build%20and%20Lint/badge.svg)](https://github.com/MeherBhaskar/arxiv-search/actions)" >> README.md
