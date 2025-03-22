@@ -1,9 +1,6 @@
 
 # ArXiv Research Assistant
 
-[![Build Status](https://github.com/MeherBhaskar/arxiv-search/workflows/Lint/badge.svg)](https://github.com/MeherBhaskar/arxiv-search/actions)
-
-
 A tool that searches arXiv for papers on a given topic, ranks them by relevance, and provides summaries.
 
 ## Features
