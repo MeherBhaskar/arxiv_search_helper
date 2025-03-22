@@ -19,8 +19,8 @@ A tool that searches arXiv for papers on a given topic, ranks them by relevance,
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/research_help_agent.git
-cd research_help_agent
+git clone https://github.com/MeherBhaskar/arxiv_search_helper.git
+cd arxiv_search_helper
 ```
 
 2. Install dependencies using Poetry:
