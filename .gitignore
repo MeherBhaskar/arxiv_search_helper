@@ -37,4 +37,4 @@ poetry.lock
 *.log
 
 # Token files (to avoid accidentally committing tokens)
-token.py
+config.py

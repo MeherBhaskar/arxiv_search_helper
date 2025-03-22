@@ -10,11 +10,11 @@ from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
 from langchain_community.llms import HuggingFacePipeline
 from langchain.chains import RetrievalQA
 from sklearn.metrics.pairwise import cosine_similarity
-
+from config import HF_TOKEN, MAX_INIT_RESULTS, MAX_FINAL_RESULTS
 
 # Set Hugging Face token if available
 # You can set this in your environment variables or directly here
-os.environ["HUGGINGFACE_TOKEN"] = "<TOKEN HERE>"  # Uncomment and add your token if needed
+os.environ["HUGGINGFACE_TOKEN"] = HF_TOKEN
 
 # 1. Search for research papers on arXiv based on a query
 def search_arxiv(query, max_results=15):  # Increased to get more initial papers
@@ -177,7 +177,7 @@ def create_llm():
                 # Define a simple function that LangChain can use
                 def generate_text(prompt):
                     try:
-                        result = hf_pipeline(prompt, max_new_tokens=100)
+                        result = hf_pipeline(prompt, max_new_tokens=10000)
                         if isinstance(result, list) and len(result) > 0:
                             generated_text = result[0].get('generated_text', '')
                             # If the generated text starts with the prompt, remove it
@@ -243,7 +243,7 @@ def create_llm():
                 # Define a simple function that LangChain can use
                 def generate_text(prompt):
                     try:
-                        result = hf_pipeline(prompt, max_new_tokens=100)
+                        result = hf_pipeline(prompt, max_new_tokens=10000)
                         if isinstance(result, list) and len(result) > 0:
                             generated_text = result[0].get('generated_text', '')
                             # If the generated text starts with the prompt, remove it
@@ -431,7 +431,7 @@ def rank_papers_by_relevance(query, papers, embedding_model):
 # 6. Autonomous research assistant function
 def research_assistant(query):
     print("Searching for papers on arXiv...")
-    papers = search_arxiv(query, max_results=15)  # Get more papers initially
+    papers = search_arxiv(query, max_results=MAX_INIT_RESULTS)
     if not papers:
         print("No papers found for the query.")
         return
@@ -446,8 +446,8 @@ def research_assistant(query):
         # Rank papers by abstract relevance
         ranked_papers = rank_papers_by_relevance(query, papers, embedding_model)
         
-        # Take the top 10 most relevant papers
-        top_papers = ranked_papers[:10]
+        # Take the top MAX_FINAL_RESULTS most relevant papers
+        top_papers = ranked_papers[:MAX_FINAL_RESULTS]
         print(f"Selected top {len(top_papers)} most relevant papers based on abstract content.")
         
         # Create a new vector store with only the top papers
