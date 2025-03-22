@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "research-help-agent"
+name = "arxiv-search-helper"
 version = "0.1.0"
 description = "A tool that searches arXiv for papers on a given topic, ranks them by relevance, and provides summaries"
 authors = ["Meher Bhaskar <meherbhaskar.madiraju@gmail.com>"]
 readme = "README.md"
-repository = "https://github.com/meherbhaskar/research-help-agent"
+repository = "https://github.com/meherbhaskar/arxiv_search_helper"
 license = "MIT"
-packages = [{include = "research_help_agent"}]
+packages = [{include = "arxiv_search_helper"}]
 package-mode = true
 
 
@@ -50,4 +50,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-research-help = "research_help_agent.arxiv_search:main"
+arxiv-search = "arxiv_search_helper.arxiv_search:main"
