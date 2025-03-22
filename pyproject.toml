@@ -6,8 +6,9 @@ authors = ["Meher Bhaskar <meherbhaskar.madiraju@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/meherbhaskar/arxiv_search_helper"
 license = "MIT"
-packages = [{include = "arxiv_search_helper"}]
+packages = [{include = "."}]
 package-mode = true
+
 
 
 [tool.poetry.dependencies]
