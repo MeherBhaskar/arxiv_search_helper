@@ -1,4 +1,4 @@
-# ArXiv Research Assistant v1.0.0
+# ArXiv Research Assistant v0.1.0
 
 ## Overview
 ArXiv Research Assistant is a powerful tool that searches arXiv for papers on a given topic, ranks them by relevance using semantic similarity, and provides summaries. This release marks the first stable version of the tool.
