@@ -6,7 +6,7 @@ authors = ["Meher Bhaskar <meherbhaskar.madiraju@gmail.com>"]
 readme = "README.md"
 repository = "https://github.com/meherbhaskar/arxiv_search_helper"
 license = "MIT"
-package-mode = true
+package-mode = false
 
 
 
