@@ -14,8 +14,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 from config import HF_TOKEN, MAX_FINAL_RESULTS, MAX_INIT_RESULTS
 
-# Set Hugging Face token if available
-# You can set this in your environment variables or directly here
+# Set Hugging Face token
 os.environ["HUGGINGFACE_TOKEN"] = HF_TOKEN
 
 
